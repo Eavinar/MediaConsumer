@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 public class MainController {
 
 	private final MainService mainService;
@@ -23,7 +22,6 @@ public class MainController {
 	 * @return list of media including books and albums for downstreams.
 	 */
 	@GetMapping("/getMedia")
-	@ResponseBody
 	public List<Media> getMedia(@RequestParam String term) {
 		return mainService.getMedia(term);
 	}
